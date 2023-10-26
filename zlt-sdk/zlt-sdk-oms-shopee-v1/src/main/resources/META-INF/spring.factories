@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.sdk.oms.shopee.service.provider.DefaultAPIProvider,\
+  com.sdk.oms.shopee.okhttp.HttpExecutorServiceImpl
