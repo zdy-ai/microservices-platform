@@ -10,6 +10,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.central.common.annotation.LoginUser;
 import com.central.common.constant.CommonConstant;
+import com.central.common.handler.ExcelHandler;
 import com.central.common.model.*;
 import com.central.common.utils.ExcelUtil;
 import com.central.log.annotation.AuditLog;
@@ -34,6 +35,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -56,6 +58,9 @@ public class SysUserController {
 
     @Autowired
     private IQueryService queryService;
+
+    @Resource
+    private ExcelHandler excelHandler;
 
     /**
      * 当前登录用户 LoginAppUser
@@ -120,7 +125,7 @@ public class SysUserController {
      * @param sysUser
      */
     @PutMapping("/users")
-    @CachePut(value = "user", key = "#sysUser.username", unless="#result == null")
+    @CachePut(value = "user", key = "#sysUser.username", unless = "#result == null")
     //@AuditLog(operation = "'更新用户:' + #sysUser")
     public void updateSysUser(@RequestBody SysUser sysUser) {
         appUserService.updateById(sysUser);
@@ -255,7 +260,7 @@ public class SysUserController {
     @PostMapping(value = "/users/import")
     public Result importExcl(@RequestParam("file") MultipartFile excl) throws Exception {
         int rowNum = 0;
-        if(!excl.isEmpty()) {
+        if (!excl.isEmpty()) {
             List<SysUserExcel> list = ExcelUtil.importExcel(excl, 0, 1, SysUserExcel.class);
             rowNum = list.size();
             if (rowNum > 0) {
@@ -270,7 +275,18 @@ public class SysUserController {
                 appUserService.saveBatch(users);
             }
         }
-        return Result.succeed("导入数据成功，一共【"+rowNum+"】行");
+        return Result.succeed("导入数据成功，一共【" + rowNum + "】行");
+    }
+
+    /**
+     * 测试导入通用方式
+     *
+     * @param file
+     * @return
+     */
+    @PostMapping("/importExcel")
+    public Result importExcel(@RequestParam("file") MultipartFile file) {
+        return excelHandler.dealExcel(file, "excelUserImport");
     }
 
     @ApiOperation(value = "用户全文搜索列表")
@@ -288,15 +304,16 @@ public class SysUserController {
 
     /**
      * 获取用户并返回角色列表
+     *
      * @param username
      * @return
      */
     @GetMapping(value = "/users/roleUser/{username}")
     @ApiOperation(value = "查询用户-带角色信息")
     @Cacheable(value = "userRoles", key = "#username")
-    public SysUser selectRoleUser(@PathVariable("username") String username){
+    public SysUser selectRoleUser(@PathVariable("username") String username) {
         SysUser sysUser = selectByUsername(username);
-        if(ObjectUtil.isNotNull(sysUser)){
+        if (ObjectUtil.isNotNull(sysUser)) {
             List<SysRole> roleList = findRolesByUserId(sysUser.getId());
             sysUser.setRoles(roleList);
         }
