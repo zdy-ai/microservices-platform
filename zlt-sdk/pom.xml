@@ -12,5 +12,6 @@
 
     <modules>
         <module>zlt-sdk-oms-shopee-v1</module>
+        <module>zlt-sdk-tms-ubi</module>
     </modules>
 </project>
