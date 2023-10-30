@@ -21,6 +21,18 @@ public class OkHttpUtils {
                     .readTimeout(5, TimeUnit.SECONDS)       // 设置超时时间
                     .build();
 
+    /**
+     * 获取delete 请求
+     *
+     * @param
+     * @return java.lang.String
+     * @author yl
+     * @date 2022-07-13 18:09
+     */
+    public static String doDelete(String url, Map<String, Object> params, Map<String, String> headers) {
+        Call call = createDeleteCall(url, params, headers);
+        return execute(call);
+    }
 
     /**
      * 获取post 请求
@@ -119,7 +131,23 @@ public class OkHttpUtils {
         return urlBuilder.build();
     }
 
+    /**
+     * 创建 delete 请求
+     *
+     * @param url params 参数 Headers 头部
+     * @return
+     * @author yl
+     * @date 2022-07-13 17:54
+     */
 
+    public static Call createDeleteCall(String url, Map<String, Object> params, Map<String, String> headers) {
+        Request request = new Request.Builder()
+                .delete(createFormBody(params))
+                .headers(createHeaders(headers))
+                .url(url)
+                .build();
+        return client.newCall(request);
+    }
     /**
      * 创建 post 请求
      *
