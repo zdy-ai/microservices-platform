@@ -1,0 +1,17 @@
+{
+    "header":{
+        "deptCode":"755",
+        "oprId":"13022939",
+        "sgs_netcode":"755A"
+    },
+    "content":{
+        "ehead":"",
+        "oprId":"13099090",
+        "deptCode":"755",
+        "waybillNo":"SF4000002138013",
+        "channel":"rider",
+        "operation":"delivery",
+        "storeCode":"SF13925563587",
+        "storeType":"7"
+    }
+}

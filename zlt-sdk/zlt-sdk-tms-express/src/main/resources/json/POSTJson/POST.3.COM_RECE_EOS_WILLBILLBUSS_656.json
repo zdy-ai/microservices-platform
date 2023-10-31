@@ -1,0 +1,18 @@
+{
+    "header":{
+        "deptCode":"755",
+        "oprId":"13099090"
+    },
+    "content":{
+        "param":{
+            "api":"sf_takeaway_pack",
+            "agent_code":"sdf",
+            "partner_id":"YSF14SD1",
+            "area_code":"755A",
+            "city_id":"755",
+            "waybill_no":"SF4000002138013",
+            "receiver_payment":"0",
+            "sf_takeaway_time":"2021-07-15 18:09:00"
+        }
+    }
+}

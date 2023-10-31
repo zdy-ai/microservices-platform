@@ -1,0 +1,20 @@
+{
+  "orderId":"TEST20200506181000",
+  "jCompany":"顺丰速运",
+  "jContact":"小丰",
+  "jTel":"95338",
+  "jProvince":"广东省",
+  "jCity":"深圳市",
+  "jAddress":"新洲十一街万基商务大厦",
+  "dCompany":"顺丰科技",
+  "dContact":"小顺",
+  "dTel":"4008111111",
+  "dProvince":"广东省",
+  "dCity":"深圳市",
+  "dAddress":"学府路软件产业基地1栋B座",
+  "custid":"7551234567",
+  "payMethod":"0",
+  "expressType":"1",
+  "depositumInfo":"手机",
+  "depositumNo":"1"
+}

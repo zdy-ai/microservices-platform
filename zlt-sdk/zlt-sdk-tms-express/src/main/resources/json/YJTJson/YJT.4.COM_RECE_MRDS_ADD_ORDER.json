@@ -1,0 +1,35 @@
+{
+    "hospitalCode": "LAAS000009",
+    "orderThirds": [
+        {
+            "bspOrderNo": "lfcs543133415123613",
+            "productCode": "MEDICAL_CHART",
+            "callFlag": "0",
+            "depositumInfo": "西瓜",
+            "depositumNo": "3",
+            "destAddress": "白石龙一区175栋",
+            "destCity": "深圳市",
+            "destDistrict": "龙华新区",
+            "destName": "梁飞",
+            "destPhone": "15986618684",
+            "destProvince": "广东省",
+            "expressType": "1",
+            "hospitalCode": "",
+            "monthlyCard": "",
+            "orderDate": 1561363194848,
+            "packagesNo": 1,
+            "parcelWeighs": "10",
+            "patientIdentityCardNo": "411081199102201259",
+            "patientName": "佩奇",
+            "patientPhone": "15113149999",
+            "payMethod": 1,
+            "remark": "备注啊",
+            "srcAddress": "中山大道",
+            "srcCity": "上海市",
+            "srcDistrict": "黄浦区",
+            "srcName": "佩奇",
+            "srcPhone": "15113149999",
+            "srcProvince": "上海市"
+        }
+    ]
+}

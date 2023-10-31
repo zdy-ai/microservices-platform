@@ -1,0 +1,18 @@
+{
+    "header":{
+        "deptCode":"755",
+        "oprId":"13099090"
+    },
+    "content":{
+        "param":{
+            "api":"customer_receive_pack",
+            "agent_code":"sdf",
+            "partner_id":"YSF14SD1",
+            "area_code":"755A",
+            "city_id":"755",
+            "waybill_no":"033796774975",
+            "receiver_payment":"0",
+            "deliver_waybill_time":"2021-07-16 14:09:00"
+        }
+    }
+}

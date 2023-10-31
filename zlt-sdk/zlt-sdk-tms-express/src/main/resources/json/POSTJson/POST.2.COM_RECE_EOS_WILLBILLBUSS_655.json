@@ -1,0 +1,23 @@
+{
+    "header":{
+        "deptCode":"755",
+        "oprId":"13099090"
+    },
+    "content":{
+        "param":{
+            "api":"customer_send_pack",
+            "agent_code":"sdf",
+            "partner_id":"YSF14SD1",
+            "area_code":"755A",
+            "city_id":"755",
+            "waybill_no":"SF40000021380133",
+            "receiver_payment":"0",
+            "receive_waybill_time":"2021-07-15 18:09:00",
+            "weight":"2.00",
+            "pack_fee":"32.00",
+            "insurance_money":"1.00",
+            "insurance_fee":"1.00",
+            "ext1":""
+        }
+    }
+}

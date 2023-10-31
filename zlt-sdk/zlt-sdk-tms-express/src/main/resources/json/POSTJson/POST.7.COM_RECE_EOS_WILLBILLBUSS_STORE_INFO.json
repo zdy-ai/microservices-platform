@@ -1,0 +1,11 @@
+{
+    "header":{
+        "deptCode":"755",
+        "oprId":"13099090"
+    },
+    "content":{
+        "virtualAddr":"SF15322016108",
+        "systemId":"SKSS", 
+        "apiVersion":"1.3"
+    }
+}
