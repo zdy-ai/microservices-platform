@@ -15,5 +15,7 @@
         <module>zlt-sdk-tms-ubi</module>
         <module>zlt-sdk-tms-shopee-v2</module>
         <module>zlt-sdk-tms-express</module>
+        <module>zlt-sdk-tms-track123</module>
+        <module>zlt-sdk-tms-dsf</module>
     </modules>
 </project>
