@@ -31,8 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ExcelHandler implements InitializingBean {
 
-    @Resource
-    private ImportExcelUtil importExcelUtil;
+    private final ImportExcelUtil importExcelUtil = new ImportExcelUtil();
     @Resource
     private List<SingleExcelHandler> singleExcelHandlers;
     ConcurrentHashMap<String, SingleExcelHandler> singleExcelHandlerMap = new ConcurrentHashMap<>();
