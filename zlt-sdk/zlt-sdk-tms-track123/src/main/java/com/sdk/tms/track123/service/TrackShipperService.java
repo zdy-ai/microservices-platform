@@ -1,6 +1,7 @@
 package com.sdk.tms.track123.service;
 
 import com.central.common.utils.OkHttpUtils;
+import com.sdk.tms.track123.model.OrderRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,8 +29,8 @@ public class TrackShipperService {
     String token = "61be2f7d071441a483841be3b97e7373";
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
-        getCourierList();
-
+//        getCourierList();
+        getTrack();
 //        String message = "Hello, World!";
 //        String secretKey = "mySecretKey";
 //
@@ -46,21 +49,44 @@ public class TrackShipperService {
     public static void getCourierList() throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         String token = "7fe88dd10c0747dab41653ac878d3d84";
         long timestamp = System.currentTimeMillis();
-        byte[] hmacSha256Bytes = calculateHmacSHA256(token, String.valueOf(timestamp));
-        String signature = bytesToHex(hmacSha256Bytes);
+//        byte[] hmacSha256Bytes = calculateHmacSHA256(token, String.valueOf(timestamp));
+//        String signature = bytesToHex(hmacSha256Bytes);
         String url = "https://api.track123.com/gateway/open-api/tk/v2/courier/list";
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Content-Type", "application/json;charset=utf-8");
-        headers.put("Track123-Api-Secret", "61be2f7d071441a483841be3b97e7373");
-        headers.put("signature", signature);
+        headers.put("Track123-Api-Secret", "265ef29963a94be1bae6ad955bc9c400");
+//        headers.put("signature", signature);
         headers.put("timestamp", String.valueOf(timestamp));
-
-        String string = OkHttpUtils.doGet(url, new LinkedHashMap<>(), new LinkedHashMap<>());
+        System.out.println(url);
+        String string = OkHttpUtils.doGet(url, new LinkedHashMap<>(), headers);
         System.out.println(string);
     }
 
-    public void getTrack() {
+    public static void getTrack() {
+        long timestamp = System.currentTimeMillis();
+//        byte[] hmacSha256Bytes = calculateHmacSHA256(token, String.valueOf(timestamp));
+//        String signature = bytesToHex(hmacSha256Bytes);
+        String url = "https://api.track123.com/gateway/open-api/tk/v2/track/query";
+        Map<String, String> headers = new LinkedHashMap<>();
+        headers.put("Content-Type", "application/json;charset=utf-8");
+        headers.put("Track123-Api-Secret", "265ef29963a94be1bae6ad955bc9c400");
+//        headers.put("signature", signature);
+        headers.put("timestamp", String.valueOf(timestamp));
+        List<String> trackNos = new ArrayList<>();
+        trackNos.add("304071414818");
+        trackNos.add("620372231752");
 
+        OrderRequest orderRequest = OrderRequest.builder()
+                .trackNos(trackNos)
+                .createTimeStart("2021-08-01 00:00:00")
+                .createTimeEnd("2021-09-28 00:00:00")
+                .cursor("")
+                .queryPageSize(100)
+                .build();
+
+        System.out.println(url);
+        String string = OkHttpUtils.doPostJsonObject(url, orderRequest, headers);
+        System.out.println(string);
     }
 
 
