@@ -54,7 +54,7 @@ public class TrackShipperService {
         String url = "https://api.track123.com/gateway/open-api/tk/v2/courier/list";
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Content-Type", "application/json;charset=utf-8");
-        headers.put("Track123-Api-Secret", "265ef29963a94be1bae6ad955bc9c400");
+        headers.put("Track123-Api-Secret", "9fa500686633410a84ff0b00daed555e");
 //        headers.put("signature", signature);
         headers.put("timestamp", String.valueOf(timestamp));
         System.out.println(url);
@@ -69,7 +69,7 @@ public class TrackShipperService {
         String url = "https://api.track123.com/gateway/open-api/tk/v2/track/query";
         Map<String, String> headers = new LinkedHashMap<>();
         headers.put("Content-Type", "application/json;charset=utf-8");
-        headers.put("Track123-Api-Secret", "265ef29963a94be1bae6ad955bc9c400");
+        headers.put("Track123-Api-Secret", "9fa500686633410a84ff0b00daed555e");
 //        headers.put("signature", signature);
         headers.put("timestamp", String.valueOf(timestamp));
         List<String> trackNos = new ArrayList<>();
