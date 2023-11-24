@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.erp.sdk.fs.config.FsProperties,\
+  com.erp.sdk.fs.service.FsService

@@ -1,0 +1,34 @@
+package com.sdk.oms.shopify.api.rest.model.serializer;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.sdk.oms.shopify.api.rest.model.MetafieldValueType;
+
+import java.io.IOException;
+
+public class MetafieldValueTypeDeserializer extends StdDeserializer<MetafieldValueType> {
+
+    public MetafieldValueTypeDeserializer() {
+        this(MetafieldValueType.class);
+    }
+
+    protected MetafieldValueTypeDeserializer(Class<MetafieldValueType> t) {
+        super(t);
+    }
+
+
+    /**
+     * @param p
+     * @param ctxt
+     * @return MetafieldValueType
+     * @throws IOException
+     * @throws JsonProcessingException
+     */
+    @Override
+    public MetafieldValueType deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+        return MetafieldValueType.toEnum(p.getText());
+    }
+
+}

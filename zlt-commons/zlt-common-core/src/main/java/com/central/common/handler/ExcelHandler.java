@@ -10,6 +10,7 @@ import com.central.common.utils.ImportExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,7 +41,8 @@ public class ExcelHandler implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         if (Objects.nonNull(singleExcelHandlers)) {
             for (SingleExcelHandler singleExcelHandler : singleExcelHandlers) {
-                singleExcelHandlerMap.put(singleExcelHandler.getClass().getAnnotation(ImportExcel.class).handlerName(),
+                Class<?> actualClass = AopProxyUtils.ultimateTargetClass(singleExcelHandler);
+                singleExcelHandlerMap.put(actualClass.getAnnotation(ImportExcel.class).handlerName(),
                         singleExcelHandler);
             }
         }

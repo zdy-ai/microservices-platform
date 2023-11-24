@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+   com.sdk.tms.track123.service.TrackShipperService,\
+   com.sdk.tms.track123.handler.Track123LogisticsHandler
