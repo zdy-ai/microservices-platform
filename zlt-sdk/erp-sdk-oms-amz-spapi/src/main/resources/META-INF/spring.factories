@@ -1,5 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-   com.erp.sdk.oms.amz.spapi.utils.AmazonSpApiConfigUtils,\
-   com.erp.sdk.oms.amz.spapi.handler.AmazonListingHandler,\
-   com.erp.sdk.oms.amz.spapi.handler.AmazonFbaShipmentHandler,\
-   com.erp.sdk.oms.amz.spapi.handler.AmazonOrderHandler
