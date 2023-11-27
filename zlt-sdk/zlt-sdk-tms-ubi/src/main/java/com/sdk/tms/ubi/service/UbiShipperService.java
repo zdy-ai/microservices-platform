@@ -35,8 +35,8 @@ import java.util.Map;
 public class UbiShipperService {
 
     static String host = "http://cn.etowertech.com";
-    static String token = "pcloTVPCXZCD5G-RRlhBfR";
-    static String key = "N1S3O3OlKKRDRfcfYFONqg";
+    static String token = "";
+    static String key = "";
 
     public static void main(String[] args) {
         List<ServiceCataLog> serviceCataLogList = getServiceCatalog();

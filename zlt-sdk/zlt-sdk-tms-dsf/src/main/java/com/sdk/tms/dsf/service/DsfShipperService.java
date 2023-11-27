@@ -33,8 +33,8 @@ public class DsfShipperService {
     static String host = "https://open.4px.com/router/api/service";
     //        static String host = "https://open-test.4px.com/router/api/service";
     static String method = "ds.xms.label.getlist";
-    static String appKey = "fad2854e-93a7-4598-95ff-cb60557dbc0a";
-    static String appSecret = "0e91ca81-22f8-4fce-95d1-18ed6269604b";
+    static String appKey = "";
+    static String appSecret = "";
 
     /**
      * 批量获取标签 打印标签

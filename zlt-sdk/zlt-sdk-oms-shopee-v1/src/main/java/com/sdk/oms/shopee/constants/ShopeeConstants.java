@@ -25,11 +25,11 @@ public interface ShopeeConstants {
 
     static String offset = "AAAAFA==";
     static String time_range_field = "create_time";
-    static String code = "6f56774a41507076474a6151577a4f57";
-    static String access_token = "564969706d64574e41666e716c6c7369";
-    static String shop_access_token = "564969706d64574e41666e716c6c7369";
-    static String shop_refresh_token = "564969706d64574e41666e716c6c7369";
-    static String refresh_token = "56797a76526d4d5a4942586c70487a46";
-    static String tmp_partner_key = "5975757847654870727869546f436e696f4b454d466a74586f46696555466348";
-//    static String tmp_partner_key = "436568524178574244445975595377664f574e6b536d786b7256744158715974";
+    static String code = "";
+    static String access_token = "";
+    static String shop_access_token = "";
+    static String shop_refresh_token = "";
+    static String refresh_token = "";
+    static String tmp_partner_key = "";
+//    static String tmp_partner_key = "";
 }
