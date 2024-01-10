@@ -26,5 +26,7 @@
         <module>websocket-demo</module>
         <!-- 资源服务器demo -->
         <module>resources-server-demo</module>
+        <!--工作代码demo-->
+        <module>work-demo</module>
     </modules>
 </project>
