@@ -16,12 +16,15 @@ public class DateUtil {
 
 //    @Cacheable(key = )
     public static void main(String[] args) {
-        String pwd = "admin12345";
-        System.out.println("pwd:" + pwd);
-        String md5 = Md5Util.md5(pwd);
+//        String pwd = "wqb@NyFI33NWy7nw";
+//        System.out.println("pwd:" + pwd);
+//        String md5 = Md5Util.md5(pwd);
+        String md5 = "df3fa7b4dcc566d298b9be258423df10";
+
         System.out.println("md5:" + md5);
-        String  salt ="qrKhzJdztX";
+        String  salt ="ozlYzHYDGZ";
         String encryptPassword = Md5Util.md5(Md5Util.md5(md5) + salt);
         System.out.println("encryptPassword:" + encryptPassword);
+        System.out.println("salt:" + salt);
     }
 }
