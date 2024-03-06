@@ -17,5 +17,6 @@
         <module>zlt-sdk-tms-express</module>
         <module>zlt-sdk-tms-track123</module>
         <module>zlt-sdk-tms-dsf</module>
+        <module>zlt-sdk-tms-mabang</module>
     </modules>
 </project>
