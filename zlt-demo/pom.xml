@@ -28,5 +28,7 @@
         <module>resources-server-demo</module>
         <!--工作代码demo-->
         <module>work-demo</module>
+        <!--数据同步-->
+        <module>data-etl</module>
     </modules>
 </project>
