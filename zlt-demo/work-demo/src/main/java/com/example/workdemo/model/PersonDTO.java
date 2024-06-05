@@ -26,4 +26,5 @@ public class PersonDTO implements Serializable {
     private String age;
     private BigDecimal price;
     private int qty;
+    private Boolean isPlatformWarehouseOrder;
 }

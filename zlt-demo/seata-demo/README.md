@@ -16,7 +16,7 @@ service.vgroupMapping.test_tx_service_group=default
 store.mode=db
 store.db.datasource=druid
 store.db.dbType=mysql
-store.db.url=jdbc:mysql://192.168.28.130:3306/seata?useUnicode=true
+store.db.url=jdbc:mysql://172.10.10.135:3306/seata?useUnicode=true
 store.db.driverClassName=com.mysql.jdbc.Driver
 store.db.user=root
 store.db.password=root
@@ -40,7 +40,7 @@ registry {
 
   nacos {
     application = "seata-server"
-    serverAddr = "192.168.28.130:8848"
+    serverAddr = "172.10.10.135:8848"
     group = "SEATA_GROUP"
     namespace = ""
     cluster = "default"
@@ -54,7 +54,7 @@ config {
   type = "nacos"
 
   nacos {
-    serverAddr = "192.168.28.130:8848"
+    serverAddr = "172.10.10.135:8848"
     namespace = ""
     group = "SEATA_GROUP"
     username = "nacos"

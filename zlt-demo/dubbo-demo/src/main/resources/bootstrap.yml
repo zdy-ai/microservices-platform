@@ -8,4 +8,4 @@ spring:
     allow-bean-definition-overriding: true
   cloud:
     nacos:
-      server-addr: 192.168.28.130:8848
+      server-addr: 172.10.10.135:8848

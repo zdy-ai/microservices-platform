@@ -11,7 +11,7 @@ spring:
 
 zlt:
   datasource:
-    ip: 192.168.28.130
+    ip: 172.10.10.135
     username: root
     password: 1q2w3e4r
 
