@@ -30,12 +30,15 @@ public class StringTest {
 //        System.out.println(maskedString); // 输出示例（取决于字符串长度）：1234****7890abcdef 或 对于较短的字符串则保持原样或尽可能隐藏
 //
 //
-        String originalString2 = "hello";
-        String maskedString2 = maskExceptFirstChar(originalString2);
-        System.out.println(maskedString2); // 输出：h****
-        String originalString3 = "hel";
-        String maskedString3 = maskExceptFirstChar(originalString3);
-        System.out.println(maskedString3); // 输出：h****
+//        String originalString2 = "hello";
+//        String maskedString2 = maskExceptFirstChar(originalString2);
+//        System.out.println(maskedString2); // 输出：h****
+//        String originalString3 = "hel";
+//        String maskedString3 = maskExceptFirstChar(originalString3);
+//        System.out.println(maskedString3); // 输出：h****
+        String address = "YENİ MAH. 33195 SK. EFE KONUTLARI SİTESİ B BLOK NO: 30B Kat 7 no 14 mezitli/ mersin";
+        String s = maskLastEightChars(address);
+        System.out.println(s);
 
     }
     public static String maskExceptFirstChar(String str) {
@@ -68,15 +71,12 @@ public class StringTest {
             // 如果字符串为空或长度小于8，直接返回原字符串
             return address;
         }
-
         // 使用StringBuilder来构建结果字符串
         StringBuilder sb = new StringBuilder(address);
-
         // 从后向前替换最后8个字符为*
         for (int i = address.length() - 1; i >= address.length() - 8 && i >= 0; i--) {
             sb.setCharAt(i, '*');
         }
-
         // 将StringBuilder转换回String
         return sb.toString();
     }
